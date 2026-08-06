@@ -1,0 +1,42 @@
+- Tables
+    - user
+        - user_id (PK)
+        - username
+        - email
+        - phone_number
+        - birthday
+        - address
+        - role
+        - status
+        - created_at
+        - vendor_id (FK)
+    - vendor
+        - vendor_id (PK)
+        - vendor_warehouse_address
+        - vendor_status
+        - product_id (FK)
+        - vendor_rating
+    - login_attempts
+        - attempt_id (PK)
+        - user_id (FK)
+        - timestamp
+        - was_successful
+        - ip_address
+    - product
+        - product_id (PK)
+        - name
+        - description
+        - price
+        - stock
+        - created_at_time
+        - last_updated
+        - product_rating
+        - vendor_id (FK)
+    - purchases
+        - purchase_id (PK)
+        - user_id (FK)
+        - product_id (FK)
+        - vendor_id (FK)
+        - quantity
+        - total_price
+        - timestamp
