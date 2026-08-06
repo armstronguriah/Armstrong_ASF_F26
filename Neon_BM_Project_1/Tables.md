@@ -9,16 +9,16 @@
         - role
         - status
         - created_at
-        - vendor_id (FK)
+        - vendor_id (FK) - vendor PK
     - vendor
         - vendor_id (PK)
         - vendor_warehouse_address
         - vendor_status
-        - product_id (FK)
+        - product_id (FK) - product PK
         - vendor_rating
     - login_attempts
         - attempt_id (PK)
-        - user_id (FK)
+        - user_id (FK) - user PK
         - timestamp
         - was_successful
         - ip_address
@@ -31,12 +31,12 @@
         - created_at_time
         - last_updated
         - product_rating
-        - vendor_id (FK)
+        - vendor_id (FK) - vendor PK
     - purchases
         - purchase_id (PK)
-        - user_id (FK)
-        - product_id (FK)
-        - vendor_id (FK)
+        - user_id (FK) - user PK
+        - product_id (FK) - product PK
+        - vendor_id (FK) - vendor PK
         - quantity
         - total_price
         - timestamp
