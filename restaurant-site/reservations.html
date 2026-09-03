@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>The Brass Bulldog Sushi House | Reservations</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+<body>
+
+<header>
+
+  <nav class="navbar">
+
+    <a href="index.html" class="nav-brand">
+      <div class="logo-image">
+        <img src="./images/brass-bulldog-logo.png" alt="Brass Bulldog Sushi House Logo">
+      </div>
+      Brass Bulldog
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="reservations.html">Reservations</a></li>
+    </ul>
+
+  </nav>
+
+</header>
+
+
+<main class="page-container">
+
+  <section class="page-intro">
+
+    <h1>
+      <i class="fa-solid fa-calendar-days"></i>
+      Request a Reservation
+    </h1>
+
+    <p>
+      Reservations at The Brass Bulldog Sushi House are request only.
+      Submit your request below and our staff will review your preferred
+      date and seating arrangements.
+    </p>
+
+  </section>
+
+
+  <section class="reservation-section">
+
+    <form class="reservation-form">
+
+      <!-- Name -->
+
+      <div class="form-group">
+
+        <label for="name">
+          Name
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          maxlength="20"
+        >
+      </div>
+
+      <!-- Email -->
+
+      <div class="form-group">
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+        >
+      </div>
+
+      <!-- Party Size -->
+
+      <div class="form-group">
+
+        <label for="party-size">
+          Party Size
+        </label>
+
+        <select
+          id="party-size"
+          name="party-size"
+          required
+        >
+
+          <option value="">Select party size</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+
+        </select>
+      </div>
+
+      <!-- Date -->
+
+      <div class="form-group">
+
+        <label for="date">
+          Date
+        </label>
+
+        <input
+          type="date"
+          id="date"
+          name="date"
+          required
+        >
+      </div>
+
+      <!-- Time -->
+
+      <div class="form-group">
+
+        <label for="time">
+          Time
+        </label>
+
+        <input
+          type="time"
+          id="time"
+          name="time"
+          required
+        >
+      </div>
+
+      <!-- Seating Preference -->
+
+      <fieldset>
+
+        <legend>
+          Seating Preference
+        </legend>
+
+        <div class="radio-group">
+
+          <input
+            type="radio"
+            id="indoor"
+            name="seating"
+            value="Indoor"
+            required
+          >
+
+          <label for="indoor">
+            Indoor Dining Room
+          </label>
+        </div>
+
+        <div class="radio-group">
+
+          <input
+            type="radio"
+            id="window"
+            name="seating"
+            value="Window"
+          >
+
+          <label for="window">
+            Window Table
+          </label>
+
+        </div>
+
+        <div class="radio-group">
+
+          <input
+            type="radio"
+            id="engine-room"
+            name="seating"
+            value="Engine Room"
+          >
+
+          <label for="engine-room">
+            Steam Engine Room
+          </label>
+
+        </div>
+
+      </fieldset>
+
+
+      <!-- Dietary Notes -->
+
+      <div class="form-group">
+
+        <label for="dietary-notes">
+          Dietary Notes
+        </label>
+
+        <textarea
+          id="dietary-notes"
+          name="dietary-notes"
+          maxlength="30"
+        ></textarea>
+
+      </div>
+
+      <!-- Newsletter -->
+
+      <div class="checkbox-group">
+
+        <input
+          type="checkbox"
+          id="newsletter"
+          name="newsletter"
+        >
+
+        <label for="newsletter">
+          Join the Brass Bulldog Newsletter
+        </label>
+
+      </div>
+
+      <!-- Buttons -->
+
+      <div class="button-group">
+
+        <button type="submit" class="button">
+          Submit Request
+        </button>
+
+        <button type="reset" class="button button-secondary">
+          Reset Form
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <p>
+    <i class="fa-solid fa-gear"></i>
+    The Brass Bulldog Sushi House | Steam, Steel & Sushi
+  </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+
+/*
+Color Theme:
+The website uses dark charcoal, brass gold, copper, and warm cream
+colors to create a professional steampunk restaurant aesthetic that
+matches The Brass Bulldog brand.
+
+Font Awesome is used in the page headings, content cards,
+and footer for gear, dog, fish, calendar, and restaurant icons.
+*/
+
+
+body {
+  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: #f4ead2;
+  color: #2b2926;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*heading styling*/
+
+h1, h2, h3, .nav-brand {
+  font-family: "Cinzel", serif;
+}
+
+h1 {
+  font-size: 44px;
+  margin-top: 0;
+}
+
+h2 {
+  color: #7a4b2a;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+/*navbar styling*/
+
+.navbar {
+  background-color: #292826;
+  color: #f4ead2;
+  display: flex ;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4%;
+
+}
+
+.nav-brand {
+  color: #f4ead2;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 5px;
+
+}
+
+.nav-links a{
+  color: #d4a84f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover{
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo-image{
+  background-color: #292826;
+  width: 8rem;
+}
+/*home section*/
+
+.home {
+  background-color: #3b3935;
+  color: #f4ead2;
+  min-height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 60px 8%;
+  gap: 45px;
+}
+
+.home-content h1 {
+  color: #d4a84f;
+}
+
+.tagline {
+  font-size: 20px;
+  max-width: 550px;
+}
+
+.home-image img {
+  border: 6px solid #a66a3f;
+  border-radius: 8px;
+  box-shadow: 6px 6px 1px #1e1d1b;
+}
+
+/*button*/
+
+.button {
+  display: inline-block;
+  background-color: #7a4b2a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*welcome*/
+
+.welcome-section {
+  padding: 64px 8%;
+}
+
+.section-heading {
+  max-width: 750px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Reusable card class */
+
+.card {
+  background-color: #fffaf0;
+  padding: 2rem;
+  border: 2px solid #c79b55;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #a66a3f;
+}
+
+.card-icon {
+  font-size: 32px;
+  color: #a66a3f;
+}
+
+.feature-section {
+  background-color: #ded1b8;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 64px 8%;
+}
+
+.feature-image img {
+  border-radius: 8px;
+  border: 5px solid #a66a3f;
+}
+
+/*=========================================================================*/
+/*menu page*/
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 8%;
+}
+
+.page-intro {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 3rem;
+}
+
+.page-intro h1 {
+  color: #7a4b2a;
+}
+
+.menu-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.menu-image img {
+  border: 5px solid #a66a3f;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 500px;
+  width: 400px;
+}
+
+/*table for online menu*/
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fffaf0;
+}
+
+caption {
+  caption-side: top;
+  font-family: "Cinzel", serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #7a4b2a;
+  padding: 1rem;
+}
+
+th, td {
+  border: 2px solid #a66a3f;
+  padding: 0.85rem;
+  text-align: left;
+}
+
+th {
+  background-color: #3b3935;
+  color: #f4ead2;
+}
+
+tbody tr.even  {
+  background-color: #eadfc9;
+}
+
+tbody tr.odd{
+  background-color: #d8c08b;
+}
+
+.menu-note {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/*=============================================================================*/
+/*reservation form*/
+
+.reservation-section {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.reservation-form {
+  background-color: #fffaf0;
+  padding: 2rem;
+  border: 2px solid #c79b55;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0 #a66a3f;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 97%;
+  padding: 0.7rem;
+  border: 1px solid #777;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 50px;
+  resize: vertical;
+}
+
+fieldset {
+  border: 2px solid #c79b55;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+}
+
+legend {
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+  color: #7a4b2a;
+  padding: 0 0.5rem;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.radio-group input {
+  width: auto;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.checkbox-group input {
+  width: auto;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/*footer*/
+
+footer {
+  background-color: #292826;
+  color: #f4ead2;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+

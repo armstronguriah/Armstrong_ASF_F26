@@ -1,0 +1,18 @@
+/*resets and gives us developer control of these styles*/
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+
+button.btn.btn-primary{
+    background-color: darkorange;
+}
+
+.card-text {
+    width: 90%;
+    height: 20vh;
+    scroll-behavior: auto;
+    overflow: scroll;
+}

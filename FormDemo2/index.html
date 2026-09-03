@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Demo 2</title>
+</head>
+<body>
+
+<form action="/api/getData" method="get">
+  <label for="password1">Password:</label>
+  <input type="password" name="password" id="password1" placeholder="input password">
+  <br>
+
+  <label>Age
+    <input type="number" name ="age" min="10" max="99">
+  </label>
+  <br>
+
+  <label>Date
+    <input type="date" name="dateOfReservation">
+  </label>
+  <br>
+
+  <label>Email
+    <input type="text" name="email" id="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+    title="Please enter a valid email">
+  </label>
+
+
+  <hr> <!--horizontal rule -->
+  <input type="submit" value="SUBMIT">
+  <br>
+  <input type="reset" value="RESET">
+</form>
+
+
+
+</body>
+</html>

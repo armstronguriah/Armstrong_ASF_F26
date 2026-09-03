@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+</head>
+<body>
+
+<!--action tells the form where to send the payload-->
+<!--method tells us HOW to send the data-->
+<!--only TWO methods with forms --GET-- and --POST-- -->
+<!--GET requests go through the URL, POST requests are hidden in the body-->
+<form action="api/getData">
+  <!--  inputs and submission-->
+
+  <label> First Name
+    <input type="text"
+           name="doggy"
+           id="fname"
+           placeholder="Please enter your first name">
+  </label>
+
+  <button type="submit">SUBMIT</button>
+  <br>
+  <button type="reset">RESET</button>
+
+  <label>Are you Alive?
+    <input type="radio" name="isAlive" id="">Yes
+    <input type="radio" name="isAlive" id="">No
+    <input type="radio" name="isAlive" id="">Zombie
+<!--    radio button name must be the same if you only want one to be selected -->
+  </label>
+
+  <label> Checklist
+    <input type="checkbox" name="isCool" id="">Check if you are cool
+  </label>
+
+</form>
+
+</body>
+</html>
