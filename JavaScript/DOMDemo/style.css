@@ -1,0 +1,7 @@
+li {
+    list-style: square;
+}
+h1 {
+    width: fit-content;
+    padding: 5px;
+}
