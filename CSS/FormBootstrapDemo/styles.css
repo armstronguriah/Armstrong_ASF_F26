@@ -1,0 +1,17 @@
+
+h1 {
+    color: blueviolet;
+    text-shadow: 2px 2px 2px black;
+    font-weight: bold;
+    padding: 10px;
+}
+.navbar-nav .nav-link:hover{
+    color: blue;
+}
+.form {
+    max-width: 500px;
+    border: red 3px solid;
+    background-image: radial-gradient(lightblue, rebeccapurple);
+    border-radius: 20px;
+    margin: 0 auto;
+}
