@@ -1,133 +1,125 @@
-// test('Jest is working', () => { expect(1 + 1).toBe(2); });
-
 const isPalindrome = require('../src/isPalindrome');
 
-test("returns true for single character", () => {
-    expect(isPalindrome("a")).toBe(true);
-});
+describe("Valid Palindromes", () => {
 
-test('handles non-string input gracefully', () => {
-    expect(isPalindrome(123)).toBe(false);
-    expect(isPalindrome(null)).toBe(false);
-    expect(isPalindrome(undefined)).toBe(false);
-    expect(isPalindrome({})).toBe(false);
-});
-
-test("returns false for two different characters", () => {
-    expect(isPalindrome("ab")).toBe(false);
-});
-
-test("returns true for two same characters", () => {
-    expect(isPalindrome("aa")).toBe(true);
-});
-
-test("returns true for one character with space after", () => {
-    expect(isPalindrome("a ")).toBe(true);
-});
-
-test("returns true for one character with space before", () => {
-    expect(isPalindrome(" a")).toBe(true);
-});
-
-test("returns true for one character with punctuation", () => {
-    expect(isPalindrome("a!")).toBe(true);
-});
-
-test("returns true for two same letters with different capitalization", () => {
-    expect(isPalindrome("aA")).toBe(true);
-});
-
-describe("Wikipedia Palindromic Phrases", () => {
-
-    test("returns true for a classic palindrome with commas and punctuation", () => {
-        expect(isPalindrome("A man, a plan, a canal – Panama!")).toBe(true);
+    test("returns true for a single character", () => {
+        expect(isPalindrome("a")).toBe(true);
     });
 
-    test("returns true for a palindrome with mixed capitalization", () => {
-        expect(isPalindrome("Able was I ere I saw Elba")).toBe(true);
+    test("returns true for two identical characters", () => {
+        expect(isPalindrome("aa")).toBe(true);
     });
 
-    test("returns true for a palindrome with an exclamation mark", () => {
-        expect(isPalindrome("A dog! A panic in a pagoda!")).toBe(true);
+    test("returns true when letter casing differs", () => {
+        expect(isPalindrome("aA")).toBe(true);
     });
 
-    test("returns true for a palindrome with an apostrophe", () => {
+    test("returns true for a simple palindrome word", () => {
+        expect(isPalindrome("racecar")).toBe(true);
+    });
+
+    test("returns true for a mixed-case palindrome word", () => {
+        expect(isPalindrome("RaceCar")).toBe(true);
+    });
+
+});
+
+
+describe("Punctuation and Spacing Normalization", () => {
+
+    test("ignores trailing spaces", () => {
+        expect(isPalindrome("a ")).toBe(true);
+    });
+
+    test("ignores leading spaces", () => {
+        expect(isPalindrome(" a")).toBe(true);
+    });
+
+    test("ignores punctuation", () => {
+        expect(isPalindrome("a!")).toBe(true);
+    });
+
+    test("ignores spaces between palindrome characters", () => {
+        expect(isPalindrome("r a c e c a r")).toBe(true);
+    });
+
+    test("ignores punctuation between palindrome characters", () => {
+        expect(isPalindrome("r!a@c#e$c%a^r")).toBe(true);
+    });
+
+    test("ignores capitalization, spaces, and punctuation together", () => {
+        expect(isPalindrome("A man, a plan, a canal: Panama!")).toBe(true);
+    });
+
+    test("returns true for a palindrome containing an apostrophe", () => {
         expect(isPalindrome("Madam, I'm Adam")).toBe(true);
     });
 
-    test("returns true for a palindrome with a question mark", () => {
+    test("returns true for a palindrome containing a question mark", () => {
         expect(isPalindrome("Do geese see God?")).toBe(true);
     });
 
-    test("returns true for a palindrome containing multiple words", () => {
-        expect(isPalindrome("Never odd or even")).toBe(true);
-    });
-
-    test("returns true for a palindrome containing a comma", () => {
-        expect(isPalindrome("No lemon, no melon")).toBe(true);
-    });
-
-    test("returns true for a palindrome with different capitalization", () => {
-        expect(isPalindrome("Was it a car or a cat I saw?")).toBe(true);
-    });
-
-    test("returns true for a palindrome with an apostrophe and question mark", () => {
-        expect(isPalindrome("Won't lovers revolt now?")).toBe(true);
-    });
-
-    test("returns true for a palindrome with a period", () => {
-        expect(isPalindrome("Mr. Owl ate my metal worm")).toBe(true);
-    });
-
-    test("returns true for a palindrome with punctuation in the middle", () => {
-        expect(isPalindrome("Go hang a salami, I'm a lasagna hog")).toBe(true);
-    });
-
-    test("returns true for a palindrome with multiple spaces", () => {
-        expect(isPalindrome("Step on no pets")).toBe(true);
-    });
-
-    test("returns true for a palindrome with a comma and exclamation mark", () => {
-        expect(isPalindrome("Sit on a potato pan, Otis!")).toBe(true);
-    });
-
-    test("returns true for a palindrome with commas and mixed capitalization", () => {
-        expect(isPalindrome("Rise to vote, sir")).toBe(true);
-    });
-
-    test("returns true for a palindrome with a hyphen", () => {
+    test("returns true for a palindrome containing a hyphen", () => {
         expect(isPalindrome("If I had a hi-fi")).toBe(true);
     });
 
 });
 
-test("returns true for an extremely long and complicated palindrome phrase", () => {
-    const input = [
-        "A man, a plan, a canal: Panama!",
-        "Was it a car or a cat I saw?",
-        "Never odd or even.",
-        "Do geese see God?",
-        "No lemon, no melon!",
-        "Madam, I'm Adam.",
-        "Step on no pets.",
-        "Able was I ere I saw Elba.",
-        "Go hang a salami, I'm a lasagna hog!",
-        "Mr. Owl ate my metal worm.",
-        "Go hang a salami, I'm a lasagna hog!",
-        "Able was I ere I saw Elba.",
-        "Step on no pets.",
-        "Madam, I'm Adam.",
-        "No lemon, no melon!",
-        "Do geese see God?",
-        "Never odd or even.",
-        "Was it a car or a cat I saw?",
-        "A man, a plan, a canal: Panama!"
-    ].join(" ");
 
-    expect(isPalindrome(input)).toBe(true);
+describe("Valid Palindromic Phrases", () => {
+
+    test("returns true for 'Able was I ere I saw Elba'", () => {
+        expect(isPalindrome("Able was I ere I saw Elba")).toBe(true);
+    });
+
+    test("returns true for 'A dog! A panic in a pagoda!'", () => {
+        expect(isPalindrome("A dog! A panic in a pagoda!")).toBe(true);
+    });
+
+    test("returns true for 'Never odd or even'", () => {
+        expect(isPalindrome("Never odd or even")).toBe(true);
+    });
+
+    test("returns true for 'No lemon, no melon'", () => {
+        expect(isPalindrome("No lemon, no melon")).toBe(true);
+    });
+
+    test("returns true for 'Was it a car or a cat I saw?'", () => {
+        expect(isPalindrome("Was it a car or a cat I saw?")).toBe(true);
+    });
+
+    test("returns true for 'Won't lovers revolt now?'", () => {
+        expect(isPalindrome("Won't lovers revolt now?")).toBe(true);
+    });
+
+    test("returns true for 'Mr. Owl ate my metal worm'", () => {
+        expect(isPalindrome("Mr. Owl ate my metal worm")).toBe(true);
+    });
+
+    test("returns true for 'Go hang a salami, I'm a lasagna hog'", () => {
+        expect(isPalindrome("Go hang a salami, I'm a lasagna hog")).toBe(true);
+    });
+
+    test("returns true for 'Step on no pets'", () => {
+        expect(isPalindrome("Step on no pets")).toBe(true);
+    });
+
+    test("returns true for 'Sit on a potato pan, Otis!'", () => {
+        expect(isPalindrome("Sit on a potato pan, Otis!")).toBe(true);
+    });
+
+    test("returns true for 'Rise to vote, sir'", () => {
+        expect(isPalindrome("Rise to vote, sir")).toBe(true);
+    });
+
 });
 
-describe("Non-Palindromic Words", () => {
+
+describe("Non-Palindromic Strings", () => {
+
+    test("returns false for two different characters", () => {
+        expect(isPalindrome("ab")).toBe(false);
+    });
 
     test("returns false for a regular word", () => {
         expect(isPalindrome("hello")).toBe(false);
@@ -137,82 +129,134 @@ describe("Non-Palindromic Words", () => {
         expect(isPalindrome("Hello world")).toBe(false);
     });
 
-    test("returns false for an almost palindrome", () => {
+    test("returns false for an almost-palindrome with an extra character", () => {
         expect(isPalindrome("racecars")).toBe(false);
     });
 
-    test("returns false for a palindrome with an extra character", () => {
+    test("returns false for a palindrome word with an extra character", () => {
         expect(isPalindrome("madams")).toBe(false);
     });
 
-    test("returns false for a palindrome with one incorrect middle character", () => {
+    test("returns false when one character breaks the palindrome", () => {
         expect(isPalindrome("raceXcar")).toBe(false);
     });
 
-    test("returns false for a single character followed by a different character", () => {
-        expect(isPalindrome("ab")).toBe(false);
-    });
-
-    test("returns false for a palindrome with an extra uppercase letter", () => {
+    test("returns false for a palindrome followed by an extra uppercase letter", () => {
         expect(isPalindrome("RacecaRZ")).toBe(false);
     });
 
 });
 
+
 describe("Non-Palindromic Strings With Special Characters", () => {
 
-    test("returns false for a regular word with punctuation", () => {
+    test("returns false for a non-palindrome followed by punctuation", () => {
         expect(isPalindrome("hello!")).toBe(false);
     });
 
-    test("returns false for two different letters separated by punctuation", () => {
+    test("returns false for different letters separated by punctuation", () => {
         expect(isPalindrome("a!b")).toBe(false);
     });
 
-    test("returns false for a word with punctuation throughout", () => {
+    test("returns false when punctuation is removed and remaining letters are not a palindrome", () => {
         expect(isPalindrome("h!e@l#l$o")).toBe(false);
     });
 
-    test("returns false for an almost palindrome with punctuation", () => {
+    test("returns false for an almost-palindrome containing punctuation", () => {
         expect(isPalindrome("r!a@c#e$x%c^a&r")).toBe(false);
     });
 
-    test("returns false for a palindrome with an extra letter after punctuation", () => {
+    test("returns false when an extra letter appears after punctuation", () => {
         expect(isPalindrome("racecar!!!x")).toBe(false);
     });
 
-    test("returns false for a palindrome with an incorrect first letter", () => {
+    test("returns false when the normalized phrase begins with an incorrect character", () => {
         expect(isPalindrome("X man, a plan, a canal: Panama!")).toBe(false);
     });
 
 });
 
-test("returns false for an extremely long almost-palindrome", () => {
 
-    const input = `
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        A man, a plan, a canal: Panama!
-        X
-    `;
+describe("Invalid Input Types", () => {
 
-    expect(isPalindrome(input)).toBe(false);
+    test("returns false for a number", () => {
+        expect(isPalindrome(123)).toBe(false);
+    });
+
+    test("returns false for null", () => {
+        expect(isPalindrome(null)).toBe(false);
+    });
+
+    test("returns false for undefined", () => {
+        expect(isPalindrome(undefined)).toBe(false);
+    });
+
+    test("returns false for an object", () => {
+        expect(isPalindrome({})).toBe(false);
+    });
+
+    test("returns false for an array", () => {
+        expect(isPalindrome(["racecar"])).toBe(false);
+    });
+
+    test("returns false for a boolean", () => {
+        expect(isPalindrome(true)).toBe(false);
+    });
+
+    test("returns false for a function", () => {
+        expect(isPalindrome(() => "racecar")).toBe(false);
+    });
+
+});
+
+
+describe("Edge Cases", () => {
+
+    test("returns true for an empty string", () => {
+        expect(isPalindrome("")).toBe(true);
+    });
+
+    test("returns true for a string containing only spaces", () => {
+        expect(isPalindrome("     ")).toBe(true);
+    });
+
+    test("returns true for a string containing only punctuation", () => {
+        expect(isPalindrome("!@#$%^&*")).toBe(true);
+    });
+
+    test("returns true for a single letter surrounded by spaces", () => {
+        expect(isPalindrome("   a   ")).toBe(true);
+    });
+
+    test("returns true for a single letter surrounded by punctuation", () => {
+        expect(isPalindrome("!!!a???")).toBe(true);
+    });
+
+    test("returns true when punctuation is mixed into a palindrome", () => {
+        expect(isPalindrome("r!a@c#e$c%a^r")).toBe(true);
+    });
+
+    test("returns false when normalization leaves a non-palindrome", () => {
+        expect(isPalindrome("h!e@l#l$o")).toBe(false);
+    });
+
+});
+
+
+describe("Long Inputs", () => {
+
+    test("returns true for a very long palindrome", () => {
+        const half = "abcdefghijklmnopqrstuvwxyz".repeat(100);
+        const input = half + half.split("").reverse().join("");
+
+        expect(isPalindrome(input)).toBe(true);
+    });
+
+    test("returns false for a very long almost-palindrome", () => {
+        const half = "abcdefghijklmnopqrstuvwxyz".repeat(100);
+        const input = half + "X" + half;
+
+        expect(isPalindrome(input)).toBe(false);
+    });
 
 });
